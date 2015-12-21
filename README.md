@@ -1,6 +1,8 @@
 # gsi_hud
 gamestateintegration hud for csgo
 
+low quality video: https://www.youtube.com/watch?v=4KXrA-vMWQc&feature=youtu.be
+
 requires node and potentially:
 
   -express
