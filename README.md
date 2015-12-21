@@ -15,4 +15,4 @@ run in in two cmdlines:
 
   "node index.js"
   
-and view localhost:3001 in obs clr browser at 1920x1080
+and view localhost:3001 in obs clr browser at the same resolutionas csgo
