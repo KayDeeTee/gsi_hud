@@ -3,16 +3,16 @@ gamestateintegration hud for csgo
 
 requires node and potentially:
 
-express
+  -express
 
-socket.io
+  -socket.io
 
-socket.io-wildcard
+  -socket.io-wildcard
   
 run in in two cmdlines:
 
-"node csgo.js"
+  "node csgo.js"
 
-"node index.js"
+  "node index.js"
   
 and view localhost:3001 in obs clr browser at 1920x1080
