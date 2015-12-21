@@ -1,0 +1,1489 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CSGO.jpg</title>
+    <script>
+      var weapons = {}
+
+      weapons["weapon_ak47"] = "AK-47"
+      weapons["weapon_aug"] = "AUG"
+      weapons["weapon_awp"] = "AWP"
+      weapons["weapon_bizon"] = "PP BIZON"
+      weapons["weapon_c4"] = "C4 EXPLOSIVE"
+      weapons["weapon_cz75a"] = "CZ75-AUTO"
+      weapons["weapon_deagle"] = "DESERT EAGLE"
+      weapons["weapon_elite"] = "DUALIES"
+      weapons["weapon_famas"] = "FAMAS"
+      weapons["weapon_fiveseven"] = "FIVE-SEVEN"
+      weapons["weapon_g3sg1"] = "G3SG1"
+      weapons["weapon_galilar"] = "GALIL"
+      weapons["weapon_glock"] = "GLOCK-18"
+      weapons["weapon_hkp2000"] = "P2000"      
+      weapons["weapon_knife"] = "KNIFE"
+      weapons["weapon_knife_t"] = "KNIFE"
+      weapons["weapon_m249"] = "M249"
+      weapons["weapon_m4a1"] = "M4A4"
+      weapons["weapon_m4a1_silencer"] = "M4A1-S"
+      weapons["weapon_mac10"] = "MAC-10"
+      weapons["weapon_mag7"] = "SWAG7"
+      weapons["weapon_mp7"] = "MP7"
+      weapons["weapon_mp9"] = "MP9"
+      weapons["weapon_negev"] = "NEGEV"
+      weapons["weapon_nova"] = "NOVA"
+      weapons["weapon_p250"] = "P250"
+      weapons["weapon_p90"] = "P90"
+      weapons["weapon_sawedoff"] = "WHY?????"
+      weapons["weapon_scar20"] = "SCAR-20"
+      weapons["weapon_sg556"] = "SG556"
+      weapons["weapon_ssg08"] = "SCOUT"
+      weapons["weapon_taser"] = "ZEUS"
+      weapons["weapon_tec9"]  = "TEC-9"
+      weapons["weapon_ump45"] = "UMP45"
+      weapons["weapon_xm1014"] = "XM1014"
+      weapons["weapon_usp_silencer"] = "USP-S"
+      weapons["weapon_revolver"] = "R8"
+      
+      var icons = {}
+
+      icons["weapon_ak47"] = "<img height='32px' src='http://vignette1.wikia.nocookie.net/cswikia/images/d/d9/Ak47_killicon_csgo.png/revision/latest?cb=20150604043348'></img>"
+      icons["weapon_aug"] = "<img height='32px'  src='http://vignette2.wikia.nocookie.net/cswikia/images/f/f8/Aug_killicon_csgo.png/revision/latest?cb=20151107081651'></img>"
+      icons["weapon_awp"] = "<img height='32px'  src='http://vignette4.wikia.nocookie.net/cswikia/images/c/c7/Awp_killicon_csgo.png/revision/latest?cb=20151111052901'></img>"
+      icons["weapon_bizon"] = "<img height='32px'  src='http://vignette1.wikia.nocookie.net/cswikia/images/9/90/Bizon_killicon.png/revision/latest?cb=20150604100041'></img>"
+      icons["weapon_c4"] = ""
+      icons["weapon_cz75a"] = "<img height='32px'  src='http://vignette3.wikia.nocookie.net/cswikia/images/e/e2/Cz75a_killicon.png/revision/latest?cb=20150626152224&format=webp'></img>"
+      icons["weapon_deagle"] = "<img height='32px'  src='http://vignette3.wikia.nocookie.net/cswikia/images/d/dd/Deagle_killicon_go.png/revision/latest?cb=20150907160106'></img>"
+      icons["weapon_elite"] = "<img height='32px'  src='http://vignette2.wikia.nocookie.net/cswikia/images/6/61/Elite_killicon_csgo.png/revision/latest?cb=20150926004751&format=webp'></img>"
+      icons["weapon_famas"] = "<img height='32px'  src='http://vignette4.wikia.nocookie.net/cswikia/images/2/27/Famas_killicon_csgo.png/revision/latest?cb=20151108053237'></img>"
+      icons["weapon_fiveseven"] = "<img height='32px'  src='http://vignette3.wikia.nocookie.net/cswikia/images/9/99/Fiveseven_killicon_csgo.png/revision/latest?cb=20150928010721'></img>"
+      icons["weapon_g3sg1"] = "<img height='32px'  src='http://vignette1.wikia.nocookie.net/cswikia/images/d/d8/G3sg1_killicon_csgo.png/revision/latest?cb=20151114060244'></img>"
+      icons["weapon_galilar"] = "<img height='32px'  src='http://vignette4.wikia.nocookie.net/cswikia/images/3/39/Galilar_killicon.png/revision/latest?cb=20151104020744&format=webp'></img>"
+      icons["weapon_glock"] = "<img height='32px'  src='http://vignette4.wikia.nocookie.net/cswikia/images/c/cd/Glock18_killicon_csgo.png/revision/latest?cb=20150929052232'></img>"
+      icons["weapon_hkp2000"] = "<img height='32px'  src='http://vignette3.wikia.nocookie.net/cswikia/images/1/1c/Hkp2000_killicon.png/revision/latest?cb=20150930051149'></img>"    
+      icons["weapon_knife"] = "<img height='32px'  src='http://vignette1.wikia.nocookie.net/cswikia/images/2/28/Killicon-knife_default_ct_csgo.png/revision/latest?cb=20151218225122'></img>"
+      icons["weapon_knife_t"] = "<img height='32px'  src='http://vignette2.wikia.nocookie.net/cswikia/images/5/5c/Killicon-knife_default_t_csgo.png/revision/latest?cb=20151218225123'></img>"
+      icons["weapon_m249"] = "<img height='32px'  src='http://vignette3.wikia.nocookie.net/cswikia/images/8/86/M249_killicon_csgo.png/revision/latest?cb=20151115043501'></img>"
+      icons["weapon_m4a1"] = "<img height='32px'  src='http://vignette2.wikia.nocookie.net/cswikia/images/b/bc/M4a4_killicon.png/revision/latest?cb=20151109050430'></img>"
+      icons["weapon_m4a1_silencer"] = "<img height='32px'  src='http://vignette2.wikia.nocookie.net/cswikia/images/0/02/M4a1s_killicon.png/revision/latest?cb=20150604042804'></img>"
+      icons["weapon_mac10"] = "<img height='32px'  src='http://vignette4.wikia.nocookie.net/cswikia/images/c/c6/Mac10_killicon_csgo.png/revision/latest?cb=20151008213901'></img>"
+      icons["weapon_mag7"] = "<img height='32px'  src='http://vignette3.wikia.nocookie.net/cswikia/images/e/e5/Mag7_killicon.png/revision/latest?cb=20150611160809'></img>"
+      icons["weapon_mp7"] = "<img height='32px'  src='http://vignette2.wikia.nocookie.net/cswikia/images/e/ed/Mp7_killicon.png/revision/latest?cb=20150611031531'></img>"
+      icons["weapon_mp9"] = "<img height='32px'  src='http://vignette4.wikia.nocookie.net/cswikia/images/0/0b/Mp9_killicon.png/revision/latest?cb=20150611032519'></img>"
+      icons["weapon_negev"] = "<img height='32px'  src='http://vignette3.wikia.nocookie.net/cswikia/images/c/c2/Negev_killicon.png/revision/latest?cb=20151102025426'></img>"
+      icons["weapon_nova"] = "<img height='32px'  src='http://vignette4.wikia.nocookie.net/cswikia/images/a/a3/Nova_killicon.png/revision/latest?cb=20150605213121'></img>"
+      icons["weapon_p250"] = "<img height='32px'  src='http://vignette1.wikia.nocookie.net/cswikia/images/7/74/P250_killicon.png/revision/latest?cb=20150930045326'></img>"
+      icons["weapon_p90"] = "<img height='32px'  src='http://vignette1.wikia.nocookie.net/cswikia/images/7/79/P90_killicon_csgo.png/revision/latest?cb=20151029071340'></img>"
+      icons["weapon_sawedoff"] = "<img height='32px'  src='http://vignette2.wikia.nocookie.net/cswikia/images/7/71/Sawedoff_killicon.png/revision/latest?cb=20150607002248'></img>"
+      icons["weapon_scar20"] = "<img height='32px'  src='http://vignette2.wikia.nocookie.net/cswikia/images/0/0f/Scar20_killicon.png/revision/latest?cb=20150617233706'></img>"
+      icons["weapon_sg556"] = "<img height='32px'  src='http://vignette2.wikia.nocookie.net/cswikia/images/5/53/Sg556_killicon.png/revision/latest?cb=20150618212907'></img>"
+      icons["weapon_ssg08"] = "<img height='32px'  src='http://vignette1.wikia.nocookie.net/cswikia/images/e/e0/Ssg08_killicon.png/revision/latest?cb=20150604093542'></img>"
+      icons["weapon_taser"] = "<img height='32px'  src='http://vignette1.wikia.nocookie.net/cswikia/images/d/d9/Ak47_killicon_csgo.png/revision/latest?cb=20150604043348'></img>"
+      icons["weapon_tec9"]  = "<img height='32px'  src='http://vignette3.wikia.nocookie.net/cswikia/images/1/15/Tec9_killicon.png/revision/latest?cb=20150604095129'></img>"
+      icons["weapon_ump45"] = "<img height='32px'  src='http://vignette1.wikia.nocookie.net/cswikia/images/a/a1/Ump45_killicon_csgo.png/revision/latest?cb=20151031102007'></img>"
+      icons["weapon_xm1014"] = "<img height='32px'  src='http://vignette2.wikia.nocookie.net/cswikia/images/1/18/Xm1014_killicon_csgo.png/revision/latest?cb=20151003033353'></img>"
+      icons["weapon_usp_silencer"] = "<img height='32px'  src='http://vignette1.wikia.nocookie.net/cswikia/images/b/b2/Usps_killicon_sil.png/revision/latest?cb=20150604042528'></img>"
+      icons["weapon_revolver"] = "<img height='32px'  src='http://vignette2.wikia.nocookie.net/cswikia/images/4/41/Revolver_killicon_csgo.png/revision/latest?cb=20151209044846'></img>"
+
+
+
+      var skins = {}
+      skins["default"] = ""
+skins["so_olive"] = " | Groundwater"
+skins["so_red"] = " | Candy Apple"
+skins["hy_ddpat"] = " | Forest DDPAT"
+skins["hy_arctic"] = " | Arctic Camo"
+skins["hy_desert"] = " | Desert Storm"
+skins["hy_tiger"] = " | Bengal Tiger"
+skins["hy_copperhead"] = " | Copperhead"
+skins["hy_skulls"] = " | Skulls"
+skins["hy_webs"] = " | Crimson Web"
+skins["hy_splatter"] = " | Blue Streak"
+skins["hy_ak47lam"] = " | Red Laminate"
+skins["hy_gelpen"] = " | Gunsmoke"
+skins["hy_v_tiger"] = " | Jungle Tiger"
+skins["hy_ddpat_urb"] = " | Urban DDPAT"
+skins["hy_zombie"] = " | Virus"
+skins["hy_granite"] = " | Granite Marbleized"
+skins["sp_spray"] = " | Contrast Spray"
+skins["sp_leaves"] = " | Forest Leaves"
+skins["sp_short_tape"] = " | Lichen Dashed"
+skins["sp_tape"] = " | Bone Mask"
+skins["an_navy"] = " | Anodized Navy"
+skins["sp_snake"] = " | Snake Camo"
+skins["an_silver"] = " | Silver"
+skins["an_red"] = " | Hot Rod"
+skins["am_urban"] = " | Metallic DDPAT"
+skins["am_ossify"] = " | Ossified"
+skins["aa_flames"] = " | Blaze"
+skins["aa_fade"] = " | Fade"
+skins["so_yellow"] = " | Bulldozer"
+skins["so_night"] = " | Night"
+skins["aq_copper"] = " | Copper"
+skins["aq_blued"] = " | Blue Steel"
+skins["aq_forced"] = " | Stained"
+skins["aq_oiled"] = " | Case Hardened"
+skins["so_pmc"] = " | Contractor"
+skins["so_space_marine"] = " | Colony"
+skins["am_dragon_glock"] = " | Dragon Tattoo"
+skins["am_lightning_awp"] = " | Lightning Strike"
+skins["am_zebra"] = " | Slaughter"
+skins["am_zebra_dark"] = " | Dark Water"
+skins["aa_vertigo"] = " | Hypnotic"
+skins["cu_spring_nova"] = " | Bloomstick"
+skins["am_slither_p90"] = " | Cold Blooded"
+skins["am_carbon_fiber"] = " | Carbon Fiber"
+skins["am_scorpion_p2000"] = " | Scorpion"
+skins["sp_mesh_tan"] = " | Safari Mesh"
+skins["hy_feathers_aug"] = " | Wings"
+skins["hy_arctic_contrast"] = " | Polar Camo"
+skins["hy_blizzard"] = " | Blizzard Marbleized"
+skins["hy_forest_winter"] = " | Winter Forest"
+skins["hy_forest_boreal"] = " | Boreal Forest"
+skins["hy_forest_night"] = " | Forest Night"
+skins["hy_ddpat_orange"] = " | Orange DDPAT"
+skins["hy_ddpat_pink"] = " | Pink DDPAT"
+skins["hy_mottled_sand"] = " | Mudder"
+skins["hy_reef"] = " | Cyanospatter"
+skins["so_caramel"] = " | Caramel"
+skins["so_grassland"] = " | Grassland"
+skins["so_moss"] = " | Blue Spruce"
+skins["so_purple"] = " | Ultraviolet"
+skins["so_sand"] = " | Sand Dune"
+skins["so_stormfront"] = " | Storm"
+skins["so_tornado"] = " | Tornado"
+skins["so_whiteout"] = " | Whiteout"
+skins["sp_leaves_grassland"] = " | Grassland Leaves"
+skins["sp_mesh_arctic_contrast"] = " | Polar Mesh"
+skins["sp_mesh_forest_fire"] = " | Condemned"
+skins["sp_mesh_glacier"] = " | Glacier Mesh"
+skins["sp_mesh_sand"] = " | Sand Mesh"
+skins["sp_spray_desert_sage"] = " | Sage Spray"
+skins["sp_spray_jungle"] = " | Jungle Spray"
+skins["sp_spray_sand"] = " | Sand Spray"
+skins["sp_tape_dots_urban"] = " | Urban Perforated"
+skins["sp_tape_dots_waves"] = " | Waves Perforated"
+skins["sp_tape_orange"] = " | Orange Peel"
+skins["sp_tape_urban"] = " | Urban Masked"
+skins["sp_tape_short_jungle"] = " | Jungle Dashed"
+skins["sp_tape_short_sand"] = " | Sand Dashed"
+skins["sp_tape_short_urban"] = " | Urban Dashed"
+skins["so_jungle"] = " | Jungle"
+skins["so_tangerine"] = " | Demolition"
+skins["cu_broken_path_famas"] = " | Afterimage"
+skins["cu_bullet_rain_m4a1"] = " | Bullet Rain"
+skins["cu_catskulls_p90"] = " | Death by Kitty"
+skins["sp_palm"] = " | Death by Kitty"
+skins["cu_walnut_nova"] = " | Walnut"
+skins["aq_brass"] = " | Brass"
+skins["sp_splash_p250"] = " | Splash"
+skins["hy_hunter_modern"] = " | Modern Hunter"
+skins["hy_hunter_blaze_pink"] = " | Splash Jam"
+skins["hy_hunter_blaze_orange"] = " | Blaze Orange"
+skins["sp_nukestripe_orange"] = " | Radiation Hazard"
+skins["sp_nukestripe_green"] = " | Nuclear Threat"
+skins["sp_nukestripe_maroon"] = " | Fallout Warning"
+skins["sp_zebracam"] = " | Predator"
+skins["sp_nukestripe_brown"] = " | Irradiated Alert"
+skins["hy_ak47lam_bw"] = " | Black Laminate"
+skins["hy_blam_simple"] = " | BOOM"
+skins["sp_dapple"] = " | Scorched"
+skins["sp_zebracam_bw"] = " | Faded Zebra"
+skins["hy_icosahedron"] = " | Memento"
+skins["hy_doomkitty"] = " | Doomkitty"
+skins["sp_nukestripe_green_tec9"] = " | Nuclear Threat"
+skins["cu_fireserpent_ak47_bravo"] = " | Fire Serpent"
+skins["cu_favela_awp"] = " | Corticera"
+skins["cu_dragon_p90_bravo"] = " | Emerald Dragon"
+skins["hy_siege_bravo"] = " | Overgrowth"
+skins["cu_favela_p2000"] = " | Corticera"
+skins["am_scales_bravo"] = " | Golden Koi"
+skins["sp_spray_waves_bravo"] = " | Wave Spray"
+skins["sp_star_bravo"] = " | Zirka"
+skins["aq_etched_mac10_bravo"] = " | Graven"
+skins["hy_ocean_bravo"] = " | Bright Water"
+skins["cu_season_elites_bravo"] = " | Black Limba"
+skins["hy_seaside_bravo"] = " | Tempest"
+skins["hy_crumple_bravo"] = " | Shattered"
+skins["sp_skull_diagram_bravo"] = " | Bone Pile"
+skins["sp_spitfire_famas_bravo"] = " | Spitfire"
+skins["hy_bluepolygon_bravo"] = " | Demeter"
+skins["an_emerald_bravo"] = " | Emerald"
+skins["an_navy_bravo"] = " | Anodized Navy"
+skins["sp_hazard_bravo"] = " | Hazard"
+skins["sp_tape_dots_bravo"] = " | Dry Season"
+skins["hy_mayan_dreams_bravo"] = " | Mayan Dreams"
+skins["sp_palm_bravo"] = " | Mayan Dreams"
+skins["hy_ddpat_jungle_bravo"] = " | Jungle DDPAT"
+skins["aq_steel_bravo"] = " | Rust Coat"
+skins["hy_ali_tile_bravo"] = " | Mosaico"
+skins["so_jungle_bravo"] = " | Jungle"
+skins["so_tornado_bravo"] = " | Tornado"
+skins["hy_crumple_dark_bravo"] = " | Facets"
+skins["so_sand_bravo"] = " | Sand Dune"
+skins["so_olive_bravo"] = " | Groundwater"
+skins["an_gunmetal_bravo"] = " | Anodized Gunmetal"
+skins["am_ossify_blue_p2000_bravo"] = " | Ocean Foam"
+skins["am_crumple_bravo"] = " | Graphite"
+skins["am_ossify_blue"] = " | Ocean Foam"
+skins["am_crumple"] = " | Graphite"
+skins["cu_xray_m4"] = " | X-Ray"
+skins["an_titanium30v"] = " | Blue Titanium"
+skins["hy_redtiger"] = " | Blood Tiger"
+skins["hy_bluehex"] = " | Hexane"
+skins["hy_redhex"] = " | Hive"
+skins["am_ossify_red"] = " | Hemoglobin"
+skins["am_electric_red"] = " | Serum"
+skins["cu_shark"] = " | Blood in the Water"
+skins["hy_flowers"] = " | Nightshade"
+skins["hy_water_crest"] = " | Water Sigil"
+skins["sp_camo_wood_blue"] = " | Ghost Camo"
+skins["hy_ak47lam_blue"] = " | Blue Laminate"
+skins["hy_hive"] = " | Electric Hive"
+skins["hy_modspots"] = " | Blind Spot"
+skins["sp_zebracam_blue"] = " | Azure Zebra"
+skins["am_ddpatdense_silver"] = " | Steel Disruption"
+skins["am_ddpatdense_peacock"] = " | Cobalt Disruption"
+skins["hy_webs_darker"] = " | Crimson Web"
+skins["sp_palm_shadow"] = " | Tropical Storm"
+skins["sp_twigs"] = " | Ash Wood"
+skins["hy_varicamo"] = " | VariCamo"
+skins["hy_varicamo_night"] = " | Night Ops"
+skins["hy_varicamo_urban"] = " | Urban Rubble"
+skins["hy_varicamo_blue"] = " | VariCamo Blue"
+skins["hy_varicamo_desert"] = " | CaliCamo"
+skins["sp_mesh_slashes"] = " | Hunting Blind"
+skins["sp_mesh_army"] = " | Army Mesh"
+skins["sp_mesh_python"] = " | Gator Mesh"
+skins["sp_mesh_hot_and_cold"] = " | Teardown"
+skins["sp_spray_army"] = " | Teardown"
+skins["aa_fade_metallic"] = " | Amber Fade"
+skins["aq_damascus_sg553"] = " | Damascus Steel"
+skins["am_crystallized"] = " | Red Quartz"
+skins["am_crystallized_blue"] = " | Cobalt Quartz"
+skins["hy_varicamo_red"] = " | Full Stop"
+skins["hy_snakeskin"] = " | Pit Viper"
+skins["am_crystallized_silver"] = " | Silver Quartz"
+skins["aa_fade_grassland"] = " | Acid Fade"
+skins["so_orange_accents"] = " | Nitro"
+skins["cu_m4_asimov"] = " | Asiimov"
+skins["cu_sawedoff_octopump"] = " | The Kraken"
+skins["cu_m4a1-s_elegant"] = " | Guardian"
+skins["cu_p250_refined"] = " | Mehndi"
+skins["cu_awp_cobra"] = " | Redline"
+skins["cu_famas_pulse"] = " | Pulse"
+skins["hy_marina_sunrise"] = " | Marina"
+skins["am_thorny_rose_mp9"] = " | Rose Iron"
+skins["cu_skull_nova"] = " | Rising Skull"
+skins["cu_sandstorm"] = " | Sandstorm"
+skins["hy_kami"] = " | Kami"
+skins["aq_obsidian"] = " | Magma"
+skins["am_turqoise_halftone"] = " | Cobalt Halftone"
+skins["am_diamond_plate"] = " | Tread Plate"
+skins["am_fuschia"] = " | The Fuschia Is Now"
+skins["aq_etched_cz75"] = " | Victoria"
+skins["am_p250_beaded_paint"] = " | Undertow"
+skins["am_fluted_tec9"] = " | Titanium Bit"
+skins["aq_engraved_deagle"] = " | Heirloom"
+skins["am_copper_flecks"] = " | Copper Galaxy"
+skins["hy_poly_camo"] = " | Red FragCam"
+skins["so_panther"] = " | Panther"
+skins["aq_usp_stainless"] = " | Stainless"
+skins["hy_craquelure"] = " | Blue Fissure"
+skins["cu_awp_asimov"] = " | Asiimov"
+skins["cu_aug_chameleonaire"] = " | Chameleon"
+skins["cu_ump_corporal"] = " | Corporal"
+skins["cu_ak47_cobra"] = " | Redline"
+skins["cu_p90_trigon"] = " | Trigon"
+skins["cu_mac10_redhot"] = " | Heat"
+skins["sp_negev_turq_terrain"] = " | Terrain"
+skins["cu_nova_antique"] = " | Antique"
+skins["cu_sg553_pulse"] = " | Pulse"
+skins["an_famas_sgt"] = " | Sergeant"
+skins["cu_tec9_sandstorm"] = " | Sandstorm"
+skins["cu_usp_elegant"] = " | Guardian"
+skins["cu_mag7_heaven"] = " | Heaven Guard"
+skins["hy_nerodia"] = " | Death Rattle"
+skins["so_green"] = " | Green Apple"
+skins["cu_money"] = " | Franklin"
+skins["am_crystallized_dark"] = " | Meteorite"
+skins["so_orca"] = " | Tuxedo"
+skins["am_army_shine"] = " | Army Sheen"
+skins["am_oval_hex"] = " | Caged Steel"
+skins["cu_pinstripe_ak47"] = " | Emerald Pinstripe"
+skins["am_m4a1-s_alloy_orange"] = " | Atomic Alloy"
+skins["cu_ak47_rubber"] = " | Vulcan"
+skins["cu_tec9_asiimov"] = " | Isaac"
+skins["cu_ssg08_immortal"] = " | Slashed"
+skins["cu_aug_progressiv"] = " | Torque"
+skins["cu_bizon_antique"] = " | Antique"
+skins["cu_retribution"] = " | Retribution"
+skins["hy_galil_kami"] = " | Kami"
+skins["cu_m4a1_howling"] = " | Howl"
+skins["cu_mac10_decay"] = " | Curse"
+skins["cu_p90_scorpius"] = " | Desert Warfare"
+skins["cu_scar_cyrex"] = " | Cyrex"
+skins["cu_usp_spitfire"] = " | Orion"
+skins["cu_xm1014_heaven_guard"] = " | Heaven Guard"
+skins["am_nitrogen"] = " | Poison Dart"
+skins["cu_panther_ak47"] = " | Jaguar"
+skins["cu_bratatat_negev"] = " | Bratatat"
+skins["cu_usp_sandpapered"] = " | Road Rash"
+skins["hy_ssg08_marker"] = " | Detour"
+skins["hy_snakeskin_red"] = " | Red Python"
+skins["cu_m4a1-s_silence"] = " | Master Piece"
+skins["so_orange_accents2"] = " | Nitro"
+skins["aq_steel"] = " | Rust Coat"
+skins["am_royal"] = " | Chalice"
+skins["am_metals"] = " | Knight"
+skins["am_chainmail"] = " | Chainmail"
+skins["aq_handcannon"] = " | Hand Cannon"
+skins["am_metal_inlay"] = " | Dark Age"
+skins["hy_vines"] = " | Briar"
+skins["hy_indigo_usp"] = " | Royal Blue"
+skins["so_indigo_and_grey"] = " | Indigo"
+skins["am_gyrate"] = " | Twist"
+skins["an_royalbleed"] = " | Module"
+skins["cu_titanstorm"] = " | Desert-Strike"
+skins["cu_korupt"] = " | Tatter"
+skins["cu_p2000_pulse"] = " | Pulse"
+skins["cu_kaiman"] = " | Caiman"
+skins["cu_well_traveled_ak47"] = " | Jet Set"
+skins["cu_green_leather_ak47"] = " | First Class"
+skins["cu_brown_leather_p90"] = " | Leather"
+skins["cu_luggage_mac10"] = " | Commuter"
+skins["cu_medieval_dragon_awp"] = " | Dragon Lore"
+skins["cu_green_leather_sawedoff"] = " | First Class"
+skins["cu_luggage_p2000"] = " | Coach Class"
+skins["aq_pilot_deagle"] = " | Pilot"
+skins["cu_leather_xm1014"] = " | Red Leather"
+skins["cu_bizon-osiris"] = " | Osiris"
+skins["cu_c75a-tiger"] = " | Tigris"
+skins["cu_deagle_aureus"] = " | Conspiracy"
+skins["aq_57_feathers"] = " | Fowl Play"
+skins["cu_glock-liquescent"] = " | Water Elemental"
+skins["cu_mp7-commander"] = " | Urban Hazard"
+skins["cu_negev_titanstorm"] = " | Desert-Strike"
+skins["cu_nova_koi"] = " | Koi"
+skins["cu_p2000_ivory"] = " | Ivory"
+skins["cu_bittersweet"] = " | Supernova"
+skins["cu_p90-asiimov"] = " | Asiimov"
+skins["cu_m4a1s_cyrex"] = " | Cyrex"
+skins["aq_leviathan"] = " | Abyss"
+skins["hy_lines_orange"] = " | Labyrinth"
+skins["cu_luggage_sg553"] = " | Traveler"
+skins["cu_luggage_usp-s"] = " | Business Class"
+skins["hy_plaid1"] = " | Olive Plaid"
+skins["hy_plaid2"] = " | Green Plaid"
+skins["am_nuclear_pattern1_glock"] = " | Reactor"
+skins["hy_nuclear_pattern2_mp9"] = " | Setting Sun"
+skins["sp_nuclear_pattern3_negev"] = " | Nuclear Waste"
+skins["am_nuclear_skulls1_xm1014"] = " | Bone Machine"
+skins["am_nuclear_skulls2_famas"] = " | Styx"
+skins["am_nuclear_skulls3_mac10"] = " | Nuclear Garden"
+skins["hy_nuclear_skulls4_p250"] = " | Contamination"
+skins["hy_nuclear_skulls5_tec9"] = " | Toxic"
+skins["sp_nukestripe_orange_aug"] = " | Radiation Hazard"
+skins["so_grey_nuclear_green_bizon"] = " | Chemical Green"
+skins["so_grey_nuclear_orange_five_seven"] = " | Hot Shot"
+skins["sp_nukestripe_maroon_sg553"] = " | Fallout Warning"
+skins["cu_cerbrus_galil"] = " | Cerberus"
+skins["cu_tribute_ak47"] = " | Wasteland Rebel"
+skins["aq_glock_coiled"] = " | Grinder"
+skins["am_g3sg1_murky"] = " | Murky"
+skins["aq_m4a1s_basilisk"] = " | Basilisk"
+skins["cu_m4a4_griffin"] = " | Griffin"
+skins["sp_mag7_firebitten"] = " | Firestarter"
+skins["cu_mp9_chevron"] = " | Dart"
+skins["cu_fiveseven_urban_hazard"] = " | Urban Hazard"
+skins["aq_p250_cartel"] = " | Cartel"
+skins["cu_p2000_fire_elemental"] = " | Fire Elemental"
+skins["aq_sawedoff_blackgold"] = " | Highwayman"
+skins["cu_scar20_intervention"] = " | Cardiac"
+skins["sp_ump45_d-visions"] = " | Delusion"
+skins["cu_xm1014_caritas"] = " | Tranquility"
+skins["aq_ak47_cartel"] = " | Cartel"
+skins["am_awp_glory"] = " | Man-o'-war"
+skins["cu_elites_urbanstorm"] = " | Urban Shock"
+skins["aq_deagle_naga"] = " | Naga"
+skins["cu_galil_abrasion"] = " | Chatterbox"
+skins["cu_glock_deathtoll"] = " | Catacombs"
+skins["cu_m4a4_ancestral"] = " | 龍王 (Dragon King)"
+skins["cu_m249_sektor"] = " | System Lock"
+skins["am_mac10_malachite"] = " | Malachite"
+skins["cu_mp9_deadly_poison"] = " | Deadly Poison"
+skins["cu_p250_mandala"] = " | Muertos"
+skins["cu_sawedoff_deva"] = " | Serenity"
+skins["aq_scar20_leak"] = " | Grotto"
+skins["aq_xm1014_sigla"] = " | Quicksilver"
+skins["an_tiger_orange"] = " | Tiger Tooth"
+skins["aq_damascus"] = " | Damascus Steel"
+skins["aq_damascus_90"] = " | Damascus Steel"
+skins["am_marble_fade"] = " | Marble Fade"
+skins["aq_steel_knife"] = " | Rust Coat"
+skins["am_ruby_marbleized"] = " | Doppler"
+skins["am_sapphire_marbleized"] = " | Doppler"
+skins["am_blackpearl_marbleized"] = " | Doppler"
+skins["am_doppler_phase1"] = " | Doppler"
+skins["am_doppler_phase2"] = " | Doppler"
+skins["am_doppler_phase3"] = " | Doppler"
+skins["am_doppler_phase4"] = " | Doppler"
+skins["cu_ak47_mastery"] = " | Elite Build"
+skins["aq_mp7_ultramodern"] = " | Armor Core"
+skins["aq_awp_twine"] = " | Worm God"
+skins["am_bronze_sparkle"] = " | Bronze Deco"
+skins["aq_p250_contour"] = " | Valence"
+skins["cu_fiveseven_banana"] = " | Monkey Business"
+skins["cu_galil_eco"] = " | Eco"
+skins["aq_famas_jinn"] = " | Djinn"
+skins["cu_m4a1_hyper_beast"] = " | Hyper Beast"
+skins["cu_mag7_redhot"] = " | Heat"
+skins["am_negev_glory"] = " | Man-o'-war"
+skins["cu_mac10_neonrider"] = " | Neon Rider"
+skins["cu_sawedoff_origami"] = " | Origami"
+skins["cu_cz75_precision"] = " | Pole Position"
+skins["am_ump_racer"] = " | Grand Prix"
+skins["am_aqua_flecks"] = " | Twilight Galaxy"
+skins["cu_chronos_g3sg1"] = " | Chronos"
+skins["hy_hades"] = " | Hades"
+skins["hy_icarus"] = " | Icarus Fell"
+skins["cu_labyrinth"] = " | Minotaur's Labyrinth"
+skins["sp_labyrinth"] = " | Asterion"
+skins["sp_labyrinth2"] = " | Pathfinder"
+skins["sp_labyrinth3"] = " | Daedalus"
+skins["an_red_m4a1s"] = " | Hot Rod"
+skins["cu_medusa_awp"] = " | Medusa"
+skins["gs_mother_of_pearl_elite"] = " | Duelist"
+skins["aa_pandora"] = " | Pandora's Box"
+skins["cu_poseidon"] = " | Poseidon"
+skins["hy_zodiac1"] = " | Moon in Libra"
+skins["hy_zodiac2"] = " | Sun in Leo"
+skins["hy_zodiac3"] = " | Shipping Forecast"
+skins["an_emerald"] = " | Emerald"
+skins["so_khaki_green"] = " | Para Green"
+skins["cu_anime_aug"] = " | Akihabara Accept"
+skins["am_bamboo_jungle"] = " | Hydroponic"
+skins["hy_bamboo_jungle_ink"] = " | Bamboo Print"
+skins["hy_bamboo_jungle_black"] = " | Bamboo Shadow"
+skins["hy_bamboo_jungle"] = " | Bamboo Forest"
+skins["am_geometric_steps"] = " | Aqua Terrace"
+skins["hy_geometric_steps_green"] = " | Counter Terrace"
+skins["hy_geometric_steps_yellow"] = " | Terrace"
+skins["hy_kimono_diamonds"] = " | Neon Kimono"
+skins["hy_kimono_diamonds_orange"] = " | Orange Kimono"
+skins["hy_kimono_diamonds_red"] = " | Crimson Kimono"
+skins["sp_kimono_diamonds"] = " | Mint Kimono"
+skins["am_seastorm"] = " | Midnight Storm"
+skins["am_seastorm_blood"] = " | Sunset Storm 壱"
+skins["am_seastorm_shojo"] = " | Sunset Storm 弐"
+skins["am_kimono_sunrise"] = " | Daybreak"
+skins["so_keycolors"] = " | Impact Drill"
+skins["so_aqua"] = " | Seabird"
+skins["cu_ak47_courage_alt"] = " | Aquamarine Revenge"
+skins["cu_awp_hyper_beast"] = " | Hyper Beast"
+skins["cu_cz75a_chastizer"] = " | Yellow Jacket"
+skins["am_famas_dots"] = " | Neural Net"
+skins["cu_galilar_particles"] = " | Rocket Pop"
+skins["aq_glock18_flames_blue"] = " | Bunsen Burner"
+skins["cu_m4a4_evil_daimyo"] = " | Evil Daimyo"
+skins["cu_mp7_nemsis"] = " | Nemesis"
+skins["am_mp9_nitrogen"] = " | Ruby Poison Dart"
+skins["cu_negev_annihilator"] = " | Loudmouth"
+skins["cu_nova_ranger"] = " | Ranger"
+skins["aq_p2000_boom"] = " | Handgun"
+skins["cu_p90_mastery"] = " | Elite Build"
+skins["cu_sg553_cyrex"] = " | Cyrex"
+skins["cu_ump45_uproar"] = " | Riot"
+skins["cu_usp_progressiv"] = " | Torque"
+skins["cu_ak47_winter_sport"] = " | Frontside Misty"
+skins["cu_dualberretta_dragons"] = " | Dualing Dragons"
+skins["cu_famas_lenta"] = " | Survivor Z"
+skins["gs_g3sg1_flux_purple"] = " | Flux"
+skins["gs_galil_nightwing"] = " | Stone Cold"
+skins["gs_glock18_wrathys"] = " | Wraiths"
+skins["gs_m249_nebula_crusader"] = " | Nebula Crusader"
+skins["gs_m4a1s_snakebite_gold"] = " | Golden Coil"
+skins["cu_mac10_alekhya_duo"] = " | Rangeen"
+skins["cu_mag7_myrcene"] = " | Cobalt Core"
+skins["cu_mp7_classified"] = " | Special Delivery"
+skins["hy_p250_crackshot"] = " | Wingshot"
+skins["gs_scar20_peacemaker03"] = " | Green Marine"
+skins["cu_ssg08_technicality"] = " | Big Iron"
+skins["cu_usp_kill_confirmed"] = " | Kill Confirmed"
+skins["aq_xm1014_scumbria"] = " | Scumbria"
+skins["cu_ak47_point_disarray"] = " | Point Disarray"
+skins["am_aug_jumble"] = " | Ricochet"
+skins["cu_bizon_noxious"] = " | Fuel Rod"
+skins["aq_deagle_corinthian"] = " | Corinthian"
+skins["cu_fiveseven_retrobution"] = " | Retrobution"
+skins["cu_g3sg1_executioner"] = " | The Executioner"
+skins["gs_m4a4_royal_squire"] = " | Royal Paladin"
+skins["cu_negev_impact"] = " | Power Loader"
+skins["am_p2000_imperial_red"] = " | Imperial"
+skins["cu_p90_shapewood"] = " | Shapewood"
+skins["gs_sawedoff_necromancer"] = " | Yorick"
+skins["hy_scar20_jungler"] = " | Outbreak"
+skins["gs_sg553_tiger_moth"] = " | Tiger Moth"
+skins["cu_tec9_avalanche"] = " | Avalanche"
+skins["aq_xm1014_hot_rod"] = " | Teclu Burner"
+skins["aa_fade_revolver"] = " | Fade"
+skins["aa_fade_metallic_revolver"] = " | Amber Fade"
+
+      var rarity = {}
+rarity["so_olive"] = "r_consumer_grade"
+rarity["so_red"] = "r_industrial_grade"
+rarity["hy_ddpat"] = "r_consumer_grade"
+rarity["hy_arctic"] = "r_industrial_grade"
+rarity["hy_desert"] = "r_consumer_grade"
+rarity["hy_tiger"] = "r_classified"
+rarity["hy_copperhead"] = "r_mil_spec"
+rarity["hy_skulls"] = "r_mil_spec"
+rarity["hy_webs"] = "r_mil_spec"
+rarity["hy_splatter"] = "r_restricted"
+rarity["hy_ak47lam"] = "r_restricted"
+rarity["hy_gelpen"] = "r_industrial_grade"
+rarity["hy_v_tiger"] = "r_consumer_grade"
+rarity["hy_ddpat_urb"] = "r_consumer_grade"
+rarity["hy_zombie"] = "r_restricted"
+rarity["hy_granite"] = "r_consumer_grade"
+rarity["sp_spray"] = "r_consumer_grade"
+rarity["sp_leaves"] = "r_consumer_grade"
+rarity["sp_short_tape"] = "r_consumer_grade"
+rarity["sp_tape"] = "r_consumer_grade"
+rarity["an_navy"] = "r_mil_spec"
+rarity["sp_snake"] = "r_industrial_grade"
+rarity["an_silver"] = "r_industrial_grade"
+rarity["an_red"] = "r_mil_spec"
+rarity["am_urban"] = "r_industrial_grade"
+rarity["am_ossify"] = "r_mil_spec"
+rarity["aa_flames"] = "r_mil_spec"
+rarity["aa_fade"] = "r_mil_spec"
+rarity["so_yellow"] = "r_restricted"
+rarity["so_night"] = "r_consumer_grade"
+rarity["aq_copper"] = "r_mil_spec"
+rarity["aq_blued"] = "r_industrial_grade"
+rarity["aq_forced"] = "r_industrial_grade"
+rarity["aq_oiled"] = "r_restricted"
+rarity["so_pmc"] = "r_consumer_grade"
+rarity["so_space_marine"] = "r_consumer_grade"
+rarity["am_dragon_glock"] = "r_mil_spec"
+rarity["am_lightning_awp"] = "r_classified"
+rarity["am_zebra"] = "r_mil_spec"
+rarity["am_zebra_dark"] = "r_mil_spec"
+rarity["aa_vertigo"] = "r_restricted"
+rarity["cu_spring_nova"] = "r_classified"
+rarity["am_slither_p90"] = "r_classified"
+rarity["am_carbon_fiber"] = "r_industrial_grade"
+rarity["am_scorpion_p2000"] = "r_mil_spec"
+rarity["sp_mesh_tan"] = "r_consumer_grade"
+rarity["hy_feathers_aug"] = "r_mil_spec"
+rarity["hy_arctic_contrast"] = "r_consumer_grade"
+rarity["hy_blizzard"] = "r_industrial_grade"
+rarity["hy_forest_winter"] = "r_industrial_grade"
+rarity["hy_forest_boreal"] = "r_consumer_grade"
+rarity["hy_forest_night"] = "r_consumer_grade"
+rarity["hy_ddpat_orange"] = "r_restricted"
+rarity["hy_ddpat_pink"] = "r_mil_spec"
+rarity["hy_mottled_sand"] = "r_consumer_grade"
+rarity["hy_reef"] = "r_industrial_grade"
+rarity["so_caramel"] = "r_consumer_grade"
+rarity["so_grassland"] = "r_consumer_grade"
+rarity["so_moss"] = "r_consumer_grade"
+rarity["so_purple"] = "r_mil_spec"
+rarity["so_sand"] = "r_consumer_grade"
+rarity["so_stormfront"] = "r_consumer_grade"
+rarity["so_tornado"] = "r_consumer_grade"
+rarity["so_whiteout"] = "r_mil_spec"
+rarity["sp_leaves_grassland"] = "r_consumer_grade"
+rarity["sp_mesh_arctic_contrast"] = "r_consumer_grade"
+rarity["sp_mesh_forest_fire"] = "r_industrial_grade"
+rarity["sp_mesh_glacier"] = "r_mil_spec"
+rarity["sp_mesh_sand"] = "r_consumer_grade"
+rarity["sp_spray_desert_sage"] = "r_consumer_grade"
+rarity["sp_spray_jungle"] = "r_consumer_grade"
+rarity["sp_spray_sand"] = "r_consumer_grade"
+rarity["sp_tape_dots_urban"] = "r_consumer_grade"
+rarity["sp_tape_dots_waves"] = "r_consumer_grade"
+rarity["sp_tape_orange"] = "r_industrial_grade"
+rarity["sp_tape_urban"] = "r_consumer_grade"
+rarity["sp_tape_short_jungle"] = "r_consumer_grade"
+rarity["sp_tape_short_sand"] = "r_consumer_grade"
+rarity["sp_tape_short_urban"] = "r_consumer_grade"
+rarity["so_jungle"] = "r_consumer_grade"
+rarity["so_tangerine"] = "r_restricted"
+rarity["cu_broken_path_famas"] = "r_classified"
+rarity["cu_bullet_rain_m4a1"] = "r_covert"
+rarity["cu_catskulls_p90"] = "r_covert"
+rarity["sp_palm"] = "r_industrial_grade"
+rarity["cu_walnut_nova"] = "r_consumer_grade"
+rarity["aq_brass"] = "r_mil_spec"
+rarity["sp_splash_p250"] = "r_restricted"
+rarity["hy_hunter_modern"] = "r_mil_spec"
+rarity["hy_hunter_blaze_pink"] = "r_classified"
+rarity["hy_hunter_blaze_orange"] = "r_mil_spec"
+rarity["sp_nukestripe_orange"] = "r_industrial_grade"
+rarity["sp_nukestripe_green"] = "r_restricted"
+rarity["sp_nukestripe_maroon"] = "r_industrial_grade"
+rarity["sp_zebracam"] = "r_consumer_grade"
+rarity["sp_nukestripe_brown"] = "r_consumer_grade"
+rarity["hy_ak47lam_bw"] = "r_industrial_grade"
+rarity["hy_blam_simple"] = "r_restricted"
+rarity["sp_dapple"] = "r_consumer_grade"
+rarity["sp_zebracam_bw"] = "r_industrial_grade"
+rarity["hy_icosahedron"] = "r_mil_spec"
+rarity["hy_doomkitty"] = "r_mil_spec"
+rarity["sp_nukestripe_green_tec9"] = "r_restricted"
+rarity["cu_fireserpent_ak47_bravo"] = "r_classified"
+rarity["cu_favela_awp"] = "r_restricted"
+rarity["cu_dragon_p90_bravo"] = "r_classified"
+rarity["hy_siege_bravo"] = "r_mil_spec"
+rarity["cu_favela_p2000"] = "r_restricted"
+rarity["am_scales_bravo"] = "r_classified"
+rarity["sp_spray_waves_bravo"] = "r_mil_spec"
+rarity["sp_star_bravo"] = "r_mil_spec"
+rarity["aq_etched_mac10_bravo"] = "r_restricted"
+rarity["hy_ocean_bravo"] = "r_mil_spec"
+rarity["cu_season_elites_bravo"] = "r_mil_spec"
+rarity["hy_seaside_bravo"] = "r_mil_spec"
+rarity["hy_crumple_bravo"] = "r_mil_spec"
+rarity["sp_skull_diagram_bravo"] = "r_mil_spec"
+rarity["sp_spitfire_famas_bravo"] = "r_restricted"
+rarity["hy_bluepolygon_bravo"] = "r_mil_spec"
+rarity["an_emerald_bravo"] = "r_restricted"
+rarity["an_navy_bravo"] = "r_mil_spec"
+rarity["sp_hazard_bravo"] = "r_mil_spec"
+rarity["sp_tape_dots_bravo"] = "r_consumer_grade"
+rarity["hy_mayan_dreams_bravo"] = "r_industrial_grade"
+rarity["sp_palm_bravo"] = "r_industrial_grade"
+rarity["hy_ddpat_jungle_bravo"] = "r_consumer_grade"
+rarity["aq_steel_bravo"] = "r_mil_spec"
+rarity["hy_ali_tile_bravo"] = "r_industrial_grade"
+rarity["so_jungle_bravo"] = "r_consumer_grade"
+rarity["so_tornado_bravo"] = "r_consumer_grade"
+rarity["hy_crumple_dark_bravo"] = "r_industrial_grade"
+rarity["so_sand_bravo"] = "r_consumer_grade"
+rarity["so_olive_bravo"] = "r_consumer_grade"
+rarity["an_gunmetal_bravo"] = "r_consumer_grade"
+rarity["am_ossify_blue_p2000_bravo"] = "r_restricted"
+rarity["am_crumple_bravo"] = "r_restricted"
+rarity["am_ossify_blue"] = "r_restricted"
+rarity["am_crumple"] = "r_restricted"
+rarity["cu_xray_m4"] = "r_covert"
+rarity["an_titanium30v"] = "r_mil_spec"
+rarity["hy_redtiger"] = "r_industrial_grade"
+rarity["hy_bluehex"] = "r_mil_spec"
+rarity["hy_redhex"] = "r_mil_spec"
+rarity["am_ossify_red"] = "r_restricted"
+rarity["am_electric_red"] = "r_restricted"
+rarity["cu_shark"] = "r_covert"
+rarity["hy_flowers"] = "r_mil_spec"
+rarity["hy_water_crest"] = "r_mil_spec"
+rarity["sp_camo_wood_blue"] = "r_mil_spec"
+rarity["hy_ak47lam_blue"] = "r_mil_spec"
+rarity["hy_hive"] = "r_restricted"
+rarity["hy_modspots"] = "r_restricted"
+rarity["sp_zebracam_blue"] = "r_mil_spec"
+rarity["am_ddpatdense_silver"] = "r_mil_spec"
+rarity["am_ddpatdense_peacock"] = "r_restricted"
+rarity["hy_webs_darker"] = "r_mil_spec"
+rarity["sp_palm_shadow"] = "r_industrial_grade"
+rarity["sp_twigs"] = "r_industrial_grade"
+rarity["hy_varicamo"] = "r_industrial_grade"
+rarity["hy_varicamo_night"] = "r_industrial_grade"
+rarity["hy_varicamo_urban"] = "r_industrial_grade"
+rarity["hy_varicamo_blue"] = "r_mil_spec"
+rarity["hy_varicamo_desert"] = "r_industrial_grade"
+rarity["sp_mesh_slashes"] = "r_consumer_grade"
+rarity["sp_mesh_army"] = "r_consumer_grade"
+rarity["sp_mesh_python"] = "r_industrial_grade"
+rarity["sp_mesh_hot_and_cold"] = "r_mil_spec"
+rarity["sp_spray_army"] = "r_consumer_grade"
+rarity["aa_fade_metallic"] = "r_mil_spec"
+rarity["aq_damascus_sg553"] = "r_mil_spec"
+rarity["am_crystallized"] = "r_restricted"
+rarity["am_crystallized_blue"] = "r_restricted"
+rarity["hy_varicamo_red"] = "r_mil_spec"
+rarity["hy_snakeskin"] = "r_mil_spec"
+rarity["am_crystallized_silver"] = "r_mil_spec"
+rarity["aa_fade_grassland"] = "r_mil_spec"
+rarity["so_orange_accents"] = "r_mil_spec"
+rarity["cu_m4_asimov"] = "r_classified"
+rarity["cu_sawedoff_octopump"] = "r_covert"
+rarity["cu_m4a1-s_elegant"] = "r_restricted"
+rarity["cu_p250_refined"] = "r_classified"
+rarity["cu_awp_cobra"] = "r_restricted"
+rarity["cu_famas_pulse"] = "r_restricted"
+rarity["hy_marina_sunrise"] = "r_restricted"
+rarity["am_thorny_rose_mp9"] = "r_restricted"
+rarity["cu_skull_nova"] = "r_restricted"
+rarity["cu_sandstorm"] = "r_mil_spec"
+rarity["hy_kami"] = "r_mil_spec"
+rarity["aq_obsidian"] = "r_mil_spec"
+rarity["am_turqoise_halftone"] = "r_mil_spec"
+rarity["am_diamond_plate"] = "r_restricted"
+rarity["am_fuschia"] = "r_classified"
+rarity["aq_etched_cz75"] = "r_covert"
+rarity["am_p250_beaded_paint"] = "r_classified"
+rarity["am_fluted_tec9"] = "r_restricted"
+rarity["aq_engraved_deagle"] = "r_mil_spec"
+rarity["am_copper_flecks"] = "r_restricted"
+rarity["hy_poly_camo"] = "r_industrial_grade"
+rarity["so_panther"] = "r_mil_spec"
+rarity["aq_usp_stainless"] = "r_industrial_grade"
+rarity["hy_craquelure"] = "r_industrial_grade"
+rarity["cu_awp_asimov"] = "r_classified"
+rarity["cu_aug_chameleonaire"] = "r_covert"
+rarity["cu_ump_corporal"] = "r_mil_spec"
+rarity["cu_ak47_cobra"] = "r_restricted"
+rarity["cu_p90_trigon"] = "r_classified"
+rarity["cu_mac10_redhot"] = "r_restricted"
+rarity["sp_negev_turq_terrain"] = "r_mil_spec"
+rarity["cu_nova_antique"] = "r_classified"
+rarity["cu_sg553_pulse"] = "r_restricted"
+rarity["an_famas_sgt"] = "r_restricted"
+rarity["cu_tec9_sandstorm"] = "r_mil_spec"
+rarity["cu_usp_elegant"] = "r_mil_spec"
+rarity["cu_mag7_heaven"] = "r_mil_spec"
+rarity["hy_nerodia"] = "r_consumer_grade"
+rarity["so_green"] = "r_industrial_grade"
+rarity["cu_money"] = "r_classified"
+rarity["am_crystallized_dark"] = "r_industrial_grade"
+rarity["so_orca"] = "r_mil_spec"
+rarity["am_army_shine"] = "r_consumer_grade"
+rarity["am_oval_hex"] = "r_industrial_grade"
+rarity["cu_pinstripe_ak47"] = "r_mil_spec"
+rarity["am_m4a1-s_alloy_orange"] = "r_restricted"
+rarity["cu_ak47_rubber"] = "r_classified"
+rarity["cu_tec9_asiimov"] = "r_mil_spec"
+rarity["cu_ssg08_immortal"] = "r_mil_spec"
+rarity["cu_aug_progressiv"] = "r_restricted"
+rarity["cu_bizon_antique"] = "r_restricted"
+rarity["cu_retribution"] = "r_mil_spec"
+rarity["hy_galil_kami"] = "r_mil_spec"
+rarity["cu_m4a1_howling"] = "r_contraband"
+rarity["cu_mac10_decay"] = "r_restricted"
+rarity["cu_p90_scorpius"] = "r_mil_spec"
+rarity["cu_scar_cyrex"] = "r_classified"
+rarity["cu_usp_spitfire"] = "r_restricted"
+rarity["cu_xm1014_heaven_guard"] = "r_restricted"
+rarity["am_nitrogen"] = "r_mil_spec"
+rarity["cu_panther_ak47"] = "r_classified"
+rarity["cu_bratatat_negev"] = "r_mil_spec"
+rarity["cu_usp_sandpapered"] = "r_mil_spec"
+rarity["hy_ssg08_marker"] = "r_mil_spec"
+rarity["hy_snakeskin_red"] = "r_mil_spec"
+rarity["cu_m4a1-s_silence"] = "r_restricted"
+rarity["so_orange_accents2"] = "r_mil_spec"
+rarity["aq_steel"] = "r_industrial_grade"
+rarity["am_royal"] = "r_restricted"
+rarity["am_metals"] = "r_restricted"
+rarity["am_chainmail"] = "r_industrial_grade"
+rarity["aq_handcannon"] = "r_mil_spec"
+rarity["am_metal_inlay"] = "r_mil_spec"
+rarity["hy_vines"] = "r_consumer_grade"
+rarity["hy_indigo_usp"] = "r_consumer_grade"
+rarity["so_indigo_and_grey"] = "r_consumer_grade"
+rarity["am_gyrate"] = "r_mil_spec"
+rarity["an_royalbleed"] = "r_mil_spec"
+rarity["cu_titanstorm"] = "r_classified"
+rarity["cu_korupt"] = "r_restricted"
+rarity["cu_p2000_pulse"] = "r_industrial_grade"
+rarity["cu_kaiman"] = "r_restricted"
+rarity["cu_well_traveled_ak47"] = "r_restricted"
+rarity["cu_green_leather_ak47"] = "r_mil_spec"
+rarity["cu_brown_leather_p90"] = "r_industrial_grade"
+rarity["cu_luggage_mac10"] = "r_industrial_grade"
+rarity["cu_medieval_dragon_awp"] = "r_classified"
+rarity["cu_green_leather_sawedoff"] = "r_mil_spec"
+rarity["cu_luggage_p2000"] = "r_consumer_grade"
+rarity["aq_pilot_deagle"] = "r_mil_spec"
+rarity["cu_leather_xm1014"] = "r_mil_spec"
+rarity["cu_bizon-osiris"] = "r_restricted"
+rarity["cu_c75a-tiger"] = "r_restricted"
+rarity["cu_deagle_aureus"] = "r_restricted"
+rarity["aq_57_feathers"] = "r_classified"
+rarity["cu_glock-liquescent"] = "r_restricted"
+rarity["cu_mp7-commander"] = "r_mil_spec"
+rarity["cu_negev_titanstorm"] = "r_mil_spec"
+rarity["cu_nova_koi"] = "r_restricted"
+rarity["cu_p2000_ivory"] = "r_industrial_grade"
+rarity["cu_bittersweet"] = "r_restricted"
+rarity["cu_p90-asiimov"] = "r_covert"
+rarity["cu_m4a1s_cyrex"] = "r_classified"
+rarity["aq_leviathan"] = "r_mil_spec"
+rarity["hy_lines_orange"] = "r_mil_spec"
+rarity["cu_luggage_sg553"] = "r_industrial_grade"
+rarity["cu_luggage_usp-s"] = "r_industrial_grade"
+rarity["hy_plaid1"] = "r_consumer_grade"
+rarity["hy_plaid2"] = "r_consumer_grade"
+rarity["am_nuclear_pattern1_glock"] = "r_industrial_grade"
+rarity["hy_nuclear_pattern2_mp9"] = "r_mil_spec"
+rarity["sp_nuclear_pattern3_negev"] = "r_industrial_grade"
+rarity["am_nuclear_skulls1_xm1014"] = "r_mil_spec"
+rarity["am_nuclear_skulls2_famas"] = "r_restricted"
+rarity["am_nuclear_skulls3_mac10"] = "r_mil_spec"
+rarity["hy_nuclear_skulls4_p250"] = "r_industrial_grade"
+rarity["hy_nuclear_skulls5_tec9"] = "r_mil_spec"
+rarity["sp_nukestripe_orange_aug"] = "r_industrial_grade"
+rarity["so_grey_nuclear_green_bizon"] = "r_industrial_grade"
+rarity["so_grey_nuclear_orange_five_seven"] = "r_industrial_grade"
+rarity["sp_nukestripe_maroon_sg553"] = "r_industrial_grade"
+rarity["cu_cerbrus_galil"] = "r_restricted"
+rarity["cu_tribute_ak47"] = "r_classified"
+rarity["aq_glock_coiled"] = "r_mil_spec"
+rarity["am_g3sg1_murky"] = "r_mil_spec"
+rarity["aq_m4a1s_basilisk"] = "r_mil_spec"
+rarity["cu_m4a4_griffin"] = "r_mil_spec"
+rarity["sp_mag7_firebitten"] = "r_mil_spec"
+rarity["cu_mp9_chevron"] = "r_mil_spec"
+rarity["cu_fiveseven_urban_hazard"] = "r_mil_spec"
+rarity["aq_p250_cartel"] = "r_classified"
+rarity["cu_p2000_fire_elemental"] = "r_classified"
+rarity["aq_sawedoff_blackgold"] = "r_restricted"
+rarity["cu_scar20_intervention"] = "r_classified"
+rarity["sp_ump45_d-visions"] = "r_mil_spec"
+rarity["cu_xm1014_caritas"] = "r_classified"
+rarity["aq_ak47_cartel"] = "r_restricted"
+rarity["am_awp_glory"] = "r_classified"
+rarity["cu_elites_urbanstorm"] = "r_restricted"
+rarity["aq_deagle_naga"] = "r_mil_spec"
+rarity["cu_galil_abrasion"] = "r_covert"
+rarity["cu_glock_deathtoll"] = "r_industrial_grade"
+rarity["cu_m4a4_ancestral"] = "r_restricted"
+rarity["cu_m249_sektor"] = "r_mil_spec"
+rarity["am_mac10_malachite"] = "r_restricted"
+rarity["cu_mp9_deadly_poison"] = "r_mil_spec"
+rarity["cu_p250_mandala"] = "r_classified"
+rarity["cu_sawedoff_deva"] = "r_restricted"
+rarity["aq_scar20_leak"] = "r_mil_spec"
+rarity["aq_xm1014_sigla"] = "r_mil_spec"
+rarity["an_tiger_orange"] = "r_classified"
+rarity["aq_damascus"] = "r_restricted"
+rarity["aq_damascus_90"] = "r_restricted"
+rarity["am_marble_fade"] = "r_classified"
+rarity["aq_steel_knife"] = "r_mil_spec"
+rarity["am_ruby_marbleized"] = "r_classified"
+rarity["am_sapphire_marbleized"] = "r_classified"
+rarity["am_blackpearl_marbleized"] = "r_covert"
+rarity["am_doppler_phase1"] = "r_restricted"
+rarity["am_doppler_phase2"] = "r_restricted"
+rarity["am_doppler_phase3"] = "r_restricted"
+rarity["am_doppler_phase4"] = "r_restricted"
+rarity["cu_ak47_mastery"] = "r_industrial_grade"
+rarity["aq_mp7_ultramodern"] = "r_mil_spec"
+rarity["aq_awp_twine"] = "r_mil_spec"
+rarity["am_bronze_sparkle"] = "r_industrial_grade"
+rarity["aq_p250_contour"] = "r_mil_spec"
+rarity["cu_fiveseven_banana"] = "r_classified"
+rarity["cu_galil_eco"] = "r_classified"
+rarity["aq_famas_jinn"] = "r_classified"
+rarity["cu_m4a1_hyper_beast"] = "r_classified"
+rarity["cu_mag7_redhot"] = "r_restricted"
+rarity["am_negev_glory"] = "r_mil_spec"
+rarity["cu_mac10_neonrider"] = "r_covert"
+rarity["cu_sawedoff_origami"] = "r_mil_spec"
+rarity["cu_cz75_precision"] = "r_restricted"
+rarity["am_ump_racer"] = "r_restricted"
+rarity["am_aqua_flecks"] = "r_restricted"
+rarity["cu_chronos_g3sg1"] = "r_restricted"
+rarity["hy_hades"] = "r_industrial_grade"
+rarity["hy_icarus"] = "r_mil_spec"
+rarity["cu_labyrinth"] = "r_mil_spec"
+rarity["sp_labyrinth"] = "r_consumer_grade"
+rarity["sp_labyrinth2"] = "r_consumer_grade"
+rarity["sp_labyrinth3"] = "r_consumer_grade"
+rarity["an_red_m4a1s"] = "r_restricted"
+rarity["cu_medusa_awp"] = "r_classified"
+rarity["gs_mother_of_pearl_elite"] = "r_restricted"
+rarity["aa_pandora"] = "r_mil_spec"
+rarity["cu_poseidon"] = "r_restricted"
+rarity["hy_zodiac1"] = "r_consumer_grade"
+rarity["hy_zodiac2"] = "r_consumer_grade"
+rarity["hy_zodiac3"] = "r_industrial_grade"
+rarity["an_emerald"] = "r_mil_spec"
+rarity["so_khaki_green"] = "r_consumer_grade"
+rarity["cu_anime_aug"] = "r_covert"
+rarity["am_bamboo_jungle"] = "r_restricted"
+rarity["hy_bamboo_jungle_ink"] = "r_consumer_grade"
+rarity["hy_bamboo_jungle_black"] = "r_consumer_grade"
+rarity["hy_bamboo_jungle"] = "r_consumer_grade"
+rarity["am_geometric_steps"] = "r_mil_spec"
+rarity["hy_geometric_steps_green"] = "r_mil_spec"
+rarity["hy_geometric_steps_yellow"] = "r_mil_spec"
+rarity["hy_kimono_diamonds"] = "r_restricted"
+rarity["hy_kimono_diamonds_orange"] = "r_consumer_grade"
+rarity["hy_kimono_diamonds_red"] = "r_industrial_grade"
+rarity["sp_kimono_diamonds"] = "r_consumer_grade"
+rarity["am_seastorm"] = "r_consumer_grade"
+rarity["am_seastorm_blood"] = "r_mil_spec"
+rarity["am_seastorm_shojo"] = "r_mil_spec"
+rarity["am_kimono_sunrise"] = "r_mil_spec"
+rarity["so_keycolors"] = "r_consumer_grade"
+rarity["so_aqua"] = "r_consumer_grade"
+rarity["cu_ak47_courage_alt"] = "r_classified"
+rarity["cu_awp_hyper_beast"] = "r_classified"
+rarity["cu_cz75a_chastizer"] = "r_classified"
+rarity["am_famas_dots"] = "r_restricted"
+rarity["cu_galilar_particles"] = "r_mil_spec"
+rarity["aq_glock18_flames_blue"] = "r_industrial_grade"
+rarity["cu_m4a4_evil_daimyo"] = "r_mil_spec"
+rarity["cu_mp7_nemsis"] = "r_classified"
+rarity["am_mp9_nitrogen"] = "r_restricted"
+rarity["cu_negev_annihilator"] = "r_restricted"
+rarity["cu_nova_ranger"] = "r_mil_spec"
+rarity["aq_p2000_boom"] = "r_mil_spec"
+rarity["cu_p90_mastery"] = "r_mil_spec"
+rarity["cu_sg553_cyrex"] = "r_classified"
+rarity["cu_ump45_uproar"] = "r_mil_spec"
+rarity["cu_usp_progressiv"] = "r_industrial_grade"
+rarity["cu_ak47_winter_sport"] = "r_restricted"
+rarity["cu_dualberretta_dragons"] = "r_mil_spec"
+rarity["cu_famas_lenta"] = "r_mil_spec"
+rarity["gs_g3sg1_flux_purple"] = "r_classified"
+rarity["gs_galil_nightwing"] = "r_restricted"
+rarity["gs_glock18_wrathys"] = "r_industrial_grade"
+rarity["gs_m249_nebula_crusader"] = "r_restricted"
+rarity["gs_m4a1s_snakebite_gold"] = "r_classified"
+rarity["cu_mac10_alekhya_duo"] = "r_mil_spec"
+rarity["cu_mag7_myrcene"] = "r_mil_spec"
+rarity["cu_mp7_classified"] = "r_restricted"
+rarity["hy_p250_crackshot"] = "r_restricted"
+rarity["gs_scar20_peacemaker03"] = "r_mil_spec"
+rarity["cu_ssg08_technicality"] = "r_classified"
+rarity["cu_usp_kill_confirmed"] = "r_classified"
+rarity["aq_xm1014_scumbria"] = "r_mil_spec"
+rarity["cu_ak47_point_disarray"] = "r_restricted"
+rarity["am_aug_jumble"] = "r_mil_spec"
+rarity["cu_bizon_noxious"] = "r_restricted"
+rarity["aq_deagle_corinthian"] = "r_industrial_grade"
+rarity["cu_fiveseven_retrobution"] = "r_restricted"
+rarity["cu_g3sg1_executioner"] = "r_classified"
+rarity["gs_m4a4_royal_squire"] = "r_classified"
+rarity["cu_negev_impact"] = "r_restricted"
+rarity["am_p2000_imperial_red"] = "r_industrial_grade"
+rarity["cu_p90_shapewood"] = "r_classified"
+rarity["gs_sawedoff_necromancer"] = "r_mil_spec"
+rarity["hy_scar20_jungler"] = "r_mil_spec"
+rarity["gs_sg553_tiger_moth"] = "r_restricted"
+rarity["cu_tec9_avalanche"] = "r_restricted"
+rarity["aq_xm1014_hot_rod"] = "r_restricted"
+rarity["aa_fade_revolver"] = "r_covert"
+rarity["aa_fade_metallic_revolver"] = "r_classified"
+
+      var states = {}
+      states["active"] = "A"
+      states["holstered"] = "H"
+      states["reloading"] = "R"
+    </script>
+
+    <style>
+      body{
+        font-family: oswald;background: #00FF00;
+      }
+
+      #money{
+            position: absolute; top: 200px; left:0px; width: 150px;background: #222; font-size:20px;color:#fff;height:30px;padding-left:20px;
+      }
+
+      #timer{
+        position: absolute;width: 60px;background: #222;height: 32px;top: 0px;left: 50%;margin-left: -30px;color: #fff;text-align: center;font-size:20px;
+      }
+
+      #scores{
+            position: absolute;width: 60px;background: #222;height: 18px;top: 34px;left: 50%;margin-left: -30px;color: #fff;text-align: center;font-size:12px;
+      }
+
+      #ct_score{
+            width: 50%;float:left;color: #99aaaa;
+      }
+
+      #t_score{
+            width: 50%;float: left;color:#bbaa66;;
+      }
+
+      .live{
+        color: #fff;
+      }
+
+      .bomb{
+        color: #ff0000;
+      }
+
+      .freeze{
+        color: #0000ff;
+      }
+
+
+      .freeze{
+        color: #00ff00;
+      }
+
+      #ace {
+            position:absolute;top:100px;left: 25%;right: 25%;height: 120px;background: #222;color: #fff;font-size: 70px;text-align:center;
+      }
+
+      .hidden{
+            display:none;
+      }
+
+      #life {
+        width:300px;position: absolute;bottom: 0px;left: 0px;height: 32px;background: #222;
+      }
+
+      #container {
+          width: 200px;position:absolute;bottom:38px;right:0;
+      }
+
+      #kdr {
+          width: 200px;position:absolute;bottom:0px;right:0;height:38px;background:#111;color: #ccc;
+      }
+
+      .item{
+          height: 52px;background: #222;color:#ccc;
+      }
+
+      .selected{
+        background:#ddd;color:#222;
+      }
+
+      .item_topbar{
+          height: 15px;margin: 0;color:#000;background: rgb(175,175,175);
+      }
+
+      .r_consumer_grade{
+        background: rgb(175,175,175);
+      }
+
+      .r_industrial_grade{
+        background: rgb(100,150,225);
+      }
+
+      .r_mil_spec{
+        background: rgb(75,105,205);
+      }
+
+      .r_restricted{
+        background: rgb(136,71,255);
+      }
+
+      .r_classified{
+        background: rgb(211,44,230);
+      }
+
+      .r_covert{
+        background: rgb(235,75,75);
+      }
+
+      .r_melee{
+        background: rgb(202,171,5);
+      }
+
+      .r_contraband{
+        background: rgb(136,106,8);
+      }
+
+
+      .item_name{
+        font-size: 12px;width: 150px;float: left;padding-left: 10px;
+      }
+
+      .item_state{
+        font-size: 12px;width: 20%;float: left;text-align: center;
+      }
+
+      .item_icon{
+        width: 80%;height: 35px;float: left;margin: 0;
+      }
+
+      .item_ammo{
+        width: 20%;height: 35px;float: left;
+      }
+
+      .item_clip{ 
+        height: 15px;text-align: center;font-size: 18px;margin-top: -4px;
+      }
+
+      .item_res{
+        height: 15px;text-align: center;font-size: 12px;margin-top: 7px;
+      }
+
+      .kdr_item{
+        width: 20%;float: left;
+      }
+      .kdr_name{
+        height: 15px;text-align: center;font-size: 12px;margin-top: -4px;
+      }
+
+      #life_no, #armour_no {
+        float: left;width: 9%;margin-left: 2.5%;font-size: 22px;color: #fff;
+      }
+
+      #life_bar, #armour_bar{
+        float: left;width: 34%;height: 80%;background: #000;margin-left: 2.5%;
+    margin-top: 3px;
+      }
+
+      #life_bar_inner, #armour_bar_inner{
+        height: 100%;
+      }
+
+      .bar_ct{
+        background: #99aaaa;
+      }
+
+      .bar_t{
+        background: #bbaa66;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="timer">
+      <div id="timer_inner">
+        135
+      </div>
+    </div>
+
+    <div id="scores">
+      <div id="ct_score">
+            0
+      </div>
+      <div id="t_score">
+            0
+      </div>
+    </div>
+
+    <div id="money">
+    </div>
+
+    <div id="ace" class="hidden">
+      WOW GREAT ACE NAME, KEEP IT UP!
+    </div>
+
+    <div id="container">
+
+      <!-- PRIMARY -->
+
+      <div id="primary" class="item">
+        <div id="p_topbar" class="item_topbar">
+          <div id="p_name" class="item_name">N/A</div>
+          <div id="p_state" class="item_state">N</div>
+        </div>     
+        <div id="p_bottom">
+          <div id="p_icon" class="item_icon"></div>
+          <div id="p_ammo" class="item_ammo">
+            <div id="p_clip" class="item_clip">0</div>
+            <div id="p_res" class="item_res">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECONDARY -->
+
+      <div id="secondary" class="item">
+        <div id="s_topbar" class="item_topbar">
+          <div id="s_name" class="item_name">N/A</div>
+          <div id="s_state" class="item_state">N</div>
+        </div>     
+        <div id="s_bottom">
+          <div id="s_icon" class="item_icon"></div>
+          <div id="s_ammo" class="item_ammo">
+            <div id="s_clip" class="item_clip">0</div>
+            <div id="s_res" class="item_res">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KNIFE -->
+
+      <div id="knife" class="item">
+        <div id="k_topbar" class="item_topbar">
+          <div id="k_name" class="item_name">N/A</div>
+          <div id="k_state" class="item_state">N</div>
+        </div>     
+        <div id="k_bottom">
+          <div id="k_icon" class="item_icon"></div>
+        </div>
+      </div>
+
+      <!-- GRENADE -->
+
+      <div id="grenade" class="item">
+        <div id="g_topbar" class="item_topbar">
+          <div id="g_name" class="item_name">GRENADE</div>
+          <div id="g_state" class="item_state">N</div>
+        </div>     
+        <div id="g_bottom">
+          <div id="mo_ammo" class="item_ammo">
+            <div id="mo_clip" class="item_clip">0</div>
+            <div id="mo_name" class="item_res">Molotov</div>
+          </div>
+          <div id="de_ammo" class="item_ammo">
+            <div id="de_clip" class="item_clip">0</div>
+            <div id="de_name" class="item_res">Decoy</div>
+          </div>
+          <div id="sm_ammo" class="item_ammo">
+            <div id="sm_clip" class="item_clip">0</div>
+            <div id="sm_name" class="item_res">Smoke</div>
+          </div>
+          <div id="fl_ammo" class="item_ammo">
+            <div id="fl_clip" class="item_clip">0</div>
+            <div id="fl_name" class="item_res">Flash</div>
+          </div>
+          <div id="he_ammo" class="item_ammo">
+            <div id="he_clip" class="item_clip">0</div>
+            <div id="he_name" class="item_res">HE</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOMB -->
+      <div id="bomb" class="item">
+        <div id="b_topbar" class="item_topbar">
+          <div id="b_name" class="item_name">N/A</div>
+          <div id="b_state" class="item_state">N</div>
+        </div>     
+        <div id="b_bottom">
+          <div id="b_icon" class="item_icon"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="kdr" style="text-align: center;">
+          <div id="kil" class="kdr_item">
+            <div id="_kil">0</div>
+            <div class="kdr_name">K</div>
+          </div>
+          <div id="ass" class="kdr_item">
+            <div id="_ass">0</div>
+            <div class="kdr_name">A</div>
+          </div>
+          <div id="dea" class="kdr_item">
+            <div id="_dea">0</div>
+            <div class="kdr_name">D</div>
+          </div>
+          <div id="mvp" class="kdr_item">
+            <div id="_mvp">0</div>
+            <div class="kdr_name">MVP</div>
+          </div>
+          <div id="sco" class="kdr_item">
+            <div id="_sco">0</div>
+            <div class="kdr_name">SCORE</div>
+          </div>
+    </div>
+
+<div id="life">
+      <div id="life_no">100</div>
+      <div id="life_bar"><div id="life_bar_inner"></div></div>
+      <div id="armour_no">100</div>
+      <div id="armour_bar"><div id="armour_bar_inner"></div></div>
+    </div>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      var timer = 135
+      var phase = "non"
+      window.setInterval(function(){
+        if(timer > 0){
+          timer = timer - 0.1
+        }
+        $("#timer_inner").text(timer.toFixed(0))
+      }, 100);
+
+      var socket = io();
+      $('form').submit(function(){
+        socket.emit('message', $('#m').val());
+        $('#m').val('');
+        return false;
+      });
+      socket.on('message', function(msg){
+        data = JSON.parse(msg)
+
+      $("#ct_score").text(data.map.team_ct.score)
+      $("#t_score").text(data.map.team_t.score)
+
+        if (data.round.phase == "live" && phase != "live" && phase != "plant") {
+          $("#timer").attr("class", "live");
+          phase = "live"
+          timer = 135
+        }
+
+        if (data.round.bomb == "planted" && phase != "plant") {
+          $("#timer").attr("class", "bomb");
+          phase = "plant"
+          timer = 35
+        }
+
+        if (data.round.phase == "over" && phase != "over") {
+          $("#timer").attr("class", "over");
+          phase = "over"
+          timer = 0
+          if(data.player.state.round_kills = 5){
+            $("#ace").text("WOW GREAT ACE "+data.player.name+" KEEP IT UP!").fadeIn();
+            setTimeout(function(){ $("#ace").fadeOut()  }, 5000)
+          }
+        }
+
+        if (data.round.phase == "freezetime" && phase != "freezetime") {
+          $("#timer").attr("class", "freeze");
+          phase = "freezetime"
+          timer = 5
+        }
+
+        $("#money").text("$" + data.player.state.money)
+
+        $("#_kil").text(data.player.match_stats.kills)
+        $("#_ass").text(data.player.match_stats.assists)
+        $("#_dea").text(data.player.match_stats.deaths)
+        $("#_mvp").text(data.player.match_stats.mvps)
+        $("#_sco").text(data.player.match_stats.score)
+
+        $("#life_no").text(data.player.state.health)
+        $("#armour_no").text(data.player.state.armor)
+        if(data.player.team == "T"){
+          $("#life_bar_inner").attr('class', 'bar_t')
+          $("#armour_bar_inner").attr('class', 'bar_t')
+        } else {
+          $("#life_bar_inner").attr('class', 'bar_ct')
+          $("#armour_bar_inner").attr('class', 'bar_ct')
+        }
+        $("#life_bar_inner").width(data.player.state.health+"%")
+        $("#armour_bar_inner").width(data.player.state.armor+"%")
+        rifle = false
+        pistol= false
+        
+        he = false
+        fl = false
+        sm = false
+        de = false
+        mo = false
+
+        $.each(data.player.weapons, function(i, item){
+          //console.log(item.name)
+          //console.log(item.type)
+          //console.log(item.paintkit)
+          if(item.type == "Rifle" || item.type == "SniperRifle" || item.type == "Machine Gun" || item.type == "Shotgun" || item.type == "Submachine Gun"){
+            $("#p_name").text(weapons[item.name] + skins[item.paintkit])
+            $("#p_state").text(states[item.state])
+            $("#p_icon").html(icons[item.name])
+
+            $("#p_topbar").attr('class', 'item_topbar').addClass(rarity[item.paintkit])
+
+            if(item.state!="holstered"){
+              $(".item").removeClass("selected");
+              $("#primary").addClass("selected")
+            }
+
+            $("#p_clip").text(item.ammo_clip)
+            $("#p_res").text(item.ammo_reserve)
+            rifle = true
+          }
+
+          if(item.type == "Pistol"){
+            $("#s_name").text(weapons[item.name] + skins[item.paintkit])
+            $("#s_state").text(states[item.state])
+            $("#s_icon").html(icons[item.name])
+            $("#s_topbar").attr('class', 'item_topbar').addClass(rarity[item.paintkit])
+
+            if(item.state!="holstered"){
+              $(".item").removeClass("selected");
+              $("#secondary").addClass("selected")
+            }
+
+            $("#s_clip").text(item.ammo_clip)
+            $("#s_res").text(item.ammo_reserve)
+            pistol = true
+          }
+
+          if(item.type == "Knife"){
+            $("#k_name").text(weapons[item.name] + skins[item.paintkit])
+            $("#k_state").text(states[item.state])
+            $("#k_icon").html(icons[item.name])
+            $("#k_topbar").attr('class', 'item_topbar').addClass(rarity[item.paintkit])
+
+            if(item.state!="holstered"){
+              $(".item").removeClass("selected");
+              $("#knife").addClass("selected")
+            }
+          }
+
+          if(item.type == "Grenade"){
+            if(item.state!="holstered"){
+              $(".item").removeClass("selected");
+              $("#grenade").addClass("selected")
+            }
+
+            $("#g_topbar").attr('class', 'item_topbar').addClass(rarity[item.paintkit])
+
+            if(item.name == "weapon_smokegrenade"){
+              $("#sm_clip").text(item.ammo_reserve)
+              sm = true
+            }
+            if(item.name == "weapon_flashbang"){
+              $("#fl_clip").text(item.ammo_reserve)
+              fl = true
+            }
+            if(item.name == "weapon_hegrenade"){
+              $("#he_clip").text(item.ammo_reserve)
+              he = true
+            }
+            if(item.name == "weapon_decoy"){
+              $("#de_clip").text(item.ammo_reserve)
+              de = true
+            }
+            if(item.name == "weapon_molotov"){
+              $("#mo_clip").text(item.ammo_reserve)
+              mo = true
+            }
+
+
+          }
+
+          if(item.type == "C4"){
+            $("#b_name").text(weapons[item.name] + skins[item.paintkit])
+            $("#b_state").text(states[item.state])
+
+            $("#b_topbar").attr('class', 'item_topbar').addClass(rarity[item.paintkit])
+
+            if(item.state!="holstered"){
+              $(".item").removeClass("selected");
+              $("#bomb").addClass("selected")
+            }
+          }
+
+        })
+
+        if( rifle == false ) {
+            $("#p_name").text("N/A")
+            $("#p_state").text("N")
+            $("#p_clip").text("0")
+            $("#p_res").text("0")
+            $("#p_topbar").attr("class", "item_topbar")
+            $("#p_icon").text("")
+        }
+
+        if( pistol == false ) {
+            $("#s_name").text("N/A")
+            $("#s_state").text("N")
+            $("#s_clip").text("0")
+            $("#s_res").text("0")
+            $("#s_topbar").attr("class", "item_topbar")
+            $("#s_icon").text("")
+        }
+
+        if( he == false ) {
+            $("#he_clip").text("0")
+        }
+        if( fl == false ) {
+            $("#fl_clip").text("0")
+        }
+        if( sm == false ) {
+            $("#sm_clip").text("0")
+        }
+        if( de == false ) {
+            $("#de_clip").text("0")
+        }
+        if( mo == false ) {
+            $("#mo_clip").text("0")
+        }
+      });
+    </script>
+  </body>
+</html>
